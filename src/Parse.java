@@ -3,12 +3,15 @@
  */
 public class Parse
 {
-    public static int ToInt(Byte[] bytes) throws ParseException
+    public static int ToInt(byte[] bytes) throws ParseException
     {
         int result = 0;
 
         for(byte bt: bytes)
         {
+            if(bt == 0 | bt == 10)
+                continue;
+
             try {
                 if(bt < 48 | bt > 57)
                     throw new ParseException("Error parse");
