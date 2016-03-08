@@ -13,6 +13,7 @@ public class ThrowsExp {
         {
             try
             {
+                System.out.print("Input speed: ");
                 System.in.read(commandLine);
             }
             catch (IOException ex)
@@ -30,14 +31,14 @@ public class ThrowsExp {
             if(speed < 10)
             {
                 LowSpeed excp = new LowSpeed("Low speed (" + speed + ")");
-                excp.initCause(new DefectEngine("Brake carb"));
+                excp.initCause(new DefectEngine("Brake carb. Low flow"));
                 throw excp;
             }
 
             if(speed > 120)
             {
                 HiSpeed excp = new HiSpeed("Hi speed (" + speed + ")");
-                excp.initCause(new DefectEngine("Brake carb"));
+                excp.initCause(new DefectEngine("Brake carb. Hi flow"));
                 throw excp;
             }
         }
