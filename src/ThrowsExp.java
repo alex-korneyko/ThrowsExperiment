@@ -1,5 +1,5 @@
 import java.io.IOException;
-import java.util.Scanner;
+import MyExceptions.*;
 
 public class ThrowsExp {
 
@@ -34,48 +34,5 @@ public class ThrowsExp {
         } finally {
             System.out.println("brake!");
         }
-
-
-    }
-
-
-}
-
-class HiSpeed extends Exception {
-    private String _exc;
-
-    HiSpeed(String exception) {
-        _exc = exception;
-    }
-
-    @Override
-    public String toString() {
-        return _exc;
-    }
-}
-
-class LowSpeed extends Exception {
-    private String _message;
-
-    LowSpeed(String message) {
-        _message = message;
-    }
-
-    @Override
-    public String toString() {
-        return _message;
-    }
-}
-
-class DefectEngine extends Exception {
-    private String _exc;
-
-    DefectEngine(String exception) {
-        _exc = exception;
-    }
-
-    @Override
-    public String toString() {
-        return _exc;
     }
 }
